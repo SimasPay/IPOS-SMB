@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4B33B55B-936F-487E-9AB9-4C4E3A15DF04</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Simobi</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4B38A72D-7CFD-46DA-BE0F-0D4E9B81404B</key>
+		<string>https://repo.dimo.co.id/usvn/svn/MFS_Mobile/branches/Simobi_Ios_Dev</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Simobi.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4B38A72D-7CFD-46DA-BE0F-0D4E9B81404B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>4B38A72D-7CFD-46DA-BE0F-0D4E9B81404B</key>
+		<string>https://repo.dimo.co.id/usvn/svn/MFS_Mobile</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://repo.dimo.co.id/usvn/svn/MFS_Mobile/branches/Simobi_Ios_Dev/Simobi.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4B38A72D-7CFD-46DA-BE0F-0D4E9B81404B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4B38A72D-7CFD-46DA-BE0F-0D4E9B81404B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Simobi_Ios_Dev</string>
+		</dict>
+	</array>
+</dict>
+</plist>
