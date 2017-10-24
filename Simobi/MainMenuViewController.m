@@ -45,6 +45,7 @@
 @property UIView *viewSimobiPlusUpgrade;
 @property UIView *viewInfo;
 @property UIWindow *viewWindow;
+@property NSString *token;
 
 @end
 
@@ -195,6 +196,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.token = @"";
     // Do any additional setup after loading the view from its nib.
     
     if (IS_IPHONE_5) {
@@ -239,7 +241,7 @@
     self.promoBtn.clipsToBounds = YES;
     
     self.viewWindow = [[UIApplication sharedApplication] keyWindow];
-    
+    [self showSimobiPlusUpgrade];
     // CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
     NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
     if (![simobiPlusUpgrade  isEqual: @"0"]) {
@@ -457,9 +459,6 @@
     BOOL isDownloaded = [SimobiUtility canOpenAppsWithUrlScheme:@"smbplus://"];
     if (isDownloaded) {
         
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"smbplus://migrate/"]];
-//        return;
-        
         Reachability *reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
         
         if ([reachability currentReachabilityStatus] == NotReachable) {
@@ -489,10 +488,11 @@
             
             NSString *code = [[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"code"];
             
-            
             if ([code isEqualToString:@"2183"]) {
-                NSString *token = [[[response objectForKey:@"response"] objectForKey:@"migrateToken"] objectForKey:@"text"];
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"smbplus://migrate/"]];
+                self.token = [[[response objectForKey:@"response"] objectForKey:@"migrateToken"] objectForKey:@"text"];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You have SimobiPlus on your phone" delegate:self cancelButtonTitle:@"Register Now" otherButtonTitles:nil, nil];
+                alert.tag = 122;
+                [alert show];
             } else {
                 [SimobiAlert showAlertWithMessage:[[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"text"] ];
             }
@@ -506,7 +506,7 @@
             });
         }];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"Please download SimobiPlus first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You dont have on your phoneSimobiPlus" delegate:self cancelButtonTitle:@"Install Now" otherButtonTitles:nil, nil];
         alert.tag = 121;
         [alert show];
        
@@ -523,6 +523,14 @@
         if ([SimobiUtility canOpenAppsWithUrlScheme:url]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
+    } else if (alertView.tag == 122) {
+        if (![self.token  isEqual: @""]) {
+            NSString *depplink = [NSString stringWithFormat:@"smbplus://migrate/#%@", self.token];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:depplink]];
+        } else {
+            [SimobiAlert showAlertWithMessage:@"Please generate toke first!"];
+        }
+    
     } else {
         [DIMOPay closeSDK];
     }
