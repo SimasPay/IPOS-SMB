@@ -130,14 +130,6 @@
                                 <action selector="promoButtonAction:" destination="-1" eventType="touchUpInside" id="uDI-uK-zmD"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zqS-D4-Mqm">
-                            <rect key="frame" x="53" y="385" width="213" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="MIGRASI KE SIMOBI PLUS"/>
-                            <connections>
-                                <action selector="buttonActionMigration:" destination="-1" eventType="touchUpInside" id="648-dP-u2Q"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gHr-zC-aJJ">

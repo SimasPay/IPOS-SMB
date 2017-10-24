@@ -951,7 +951,8 @@
 				ORGANIZATIONNAME = Mfino;
 				TargetAttributes = {
 					B062CB191802981200F820F0 = {
-						DevelopmentTeam = 7QG4UF4A45;
+						DevelopmentTeam = 9C475LSC5Y;
+						ProvisioningStyle = Automatic;
 					};
 					B062CB341802981200F820F0 = {
 						DevelopmentTeam = 7QG4UF4A45;
@@ -1260,7 +1261,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9C475LSC5Y;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1290,7 +1292,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mobipay.simobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f92515bf-e814-4695-85c6-5f36a4264517";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = include;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -1303,7 +1306,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9C475LSC5Y;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1333,7 +1337,8 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Mobipay.simobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f92515bf-e814-4695-85c6-5f36a4264517";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = include;
 				VALID_ARCHS = "arm64 armv7 armv7s";

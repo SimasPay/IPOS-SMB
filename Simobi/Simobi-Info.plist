@@ -71,7 +71,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>NSCameraUsageDescription</key>
-    <string>Used to scan QR code</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Used to scan QR code</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>smbplus</string>
+	</array>
 </dict>
 </plist>

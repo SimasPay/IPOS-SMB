@@ -241,11 +241,18 @@
                     CONDITIONLOG(DEBUG_MODE,@"Response:%@",response);
 
                     //To Check IF success
+                    NSString *simobiPlusUpgrade = @"0";
+                    
+                    if ([[response objectForKey:@"response"] objectForKey:@"simobiPlusUpgrade"] != nil ) {
+                        simobiPlusUpgrade = [[[response objectForKey:@"response"] objectForKey:@"simobiPlusUpgrade"] objectForKey:@"text"];
+                    }
                     
                     NSString *code = [[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"code"];
                     
+                    
                     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                     [defaults setObject:[response valueForKeyPath:@"response.userAPIKey.text"] forKey:@"GetUserAPIKey"];
+                    [defaults setObject:simobiPlusUpgrade forKey:@"simobiPlusUpgrade"];
                     [defaults synchronize];
                     
                     NSArray *mobileNoArray = [SimobiUtility getDataFromPlistForKey:SimobiLoginNOsArray];
@@ -431,6 +438,5 @@
     [self setWelcomeLBL:nil];
     [super viewDidUnload];
 }
-
 
 @end

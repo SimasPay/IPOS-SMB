@@ -42,6 +42,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *payByQrBtn;
 @property (weak, nonatomic) IBOutlet UIButton *promoBtn;
 
+@property UIView *viewSimobiPlusUpgrade;
+@property UIView *viewInfo;
+@property UIWindow *viewWindow;
+
 @end
 
 @implementation MainMenuViewController
@@ -57,10 +61,133 @@
     return self;
 }
 
-- (void)tapped
-
-{
+- (void)tapped {
     // Tapped
+}
+
+- (void)showSimobiPlusUpgrade {
+    self.viewSimobiPlusUpgrade = [[UIView alloc]initWithFrame:[UIScreen mainScreen].applicationFrame];
+    self.viewSimobiPlusUpgrade.backgroundColor = [self colorWithHexString:@"D8D8D8"];
+    
+    float heightTopView = 230.0f;
+    float sizeImage = 86;
+    float topText = 116;
+    if (IS_IPHONE_4_OR_LESS) {
+        heightTopView = 200.0f;
+        sizeImage = 66;
+        topText = 96;
+    }
+    
+    UIImageView *imgIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"smbplus"]];
+    [imgIcon setFrame:CGRectMake((CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - sizeImage)/2, 20, sizeImage, sizeImage)];
+    
+    UILabel *lbl0 = [[UILabel alloc]initWithFrame:CGRectMake((CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 260)/2, topText, 260, 45)];
+    NSString *myString = @"Get better banking experience with New SimobiPlus";
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:myString];
+    NSRange range = [myString rangeOfString:@"New SimobiPlus"];
+    [attString addAttribute:NSForegroundColorAttributeName value:[self colorWithHexString:@"E30717"] range:range];
+    lbl0.attributedText = attString;
+    //lbl0.text = @"Get better banking experience with New SimobiPlus";
+    lbl0.numberOfLines = 0;
+    lbl0.font = [UIFont fontWithName:@"Helvetica Neue" size:19];
+    lbl0.textAlignment = NSTextAlignmentLeft;
+    
+    UIView *viewIcon =[[UIView alloc]initWithFrame:CGRectMake((CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 218)/2, topText + 60, 218, 40)];
+    UIImageView *imgAppStore = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appstore"]];
+    [imgAppStore setFrame:CGRectMake(0, 0, 104, 30)];
+    UIImageView *imgPlayStore = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"playstore"]];
+    [imgPlayStore setFrame:CGRectMake(114, 0, 104, 30)];
+    [viewIcon addSubview:imgAppStore];
+    [viewIcon addSubview:imgPlayStore];
+    
+    [self.viewSimobiPlusUpgrade addSubview: viewIcon];
+    [self.viewSimobiPlusUpgrade addSubview: lbl0];
+    [self.viewSimobiPlusUpgrade addSubview: imgIcon];
+    
+    UIButton *btnCancel = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnCancel addTarget:self action:@selector(actionCancelSimobiPlusUpgrade) forControlEvents:UIControlEventTouchUpInside];
+    CGSize btnCancelCancel = CGSizeMake(40.0f, 40.0f);
+    [btnCancel setFrame:CGRectMake((CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - btnCancelCancel.width), 0, btnCancelCancel.width, btnCancelCancel.height)];
+    [btnCancel setBackgroundColor:[UIColor clearColor]];
+    
+    UIImageView *imgClose = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Close"]];
+    [imgClose setFrame:CGRectMake((CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 28), 12, 16, 16)];
+    UIView *viewButtom =[[UIView alloc]initWithFrame:CGRectMake(0, heightTopView,CGRectGetWidth(self.viewSimobiPlusUpgrade.frame),  (CGRectGetHeight(self.viewSimobiPlusUpgrade.frame) - heightTopView))];
+    [viewButtom setBackgroundColor:[UIColor whiteColor]];
+    
+    UIImageView *tick1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tick"]];
+    [tick1 setFrame:CGRectMake(40, 12, 14, 10)];
+    UIImageView *tick2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tick"]];
+    [tick2 setFrame:CGRectMake(40, 54, 14, 10)];
+    UIImageView *tick3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tick"]];
+    [tick3 setFrame:CGRectMake(40, 100, 14, 10)];
+    UIImageView *tick4 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tick"]];
+    [tick4 setFrame:CGRectMake(40, 132, 14, 10)];
+    
+    [viewButtom addSubview:tick1];
+    [viewButtom addSubview:tick2];
+    [viewButtom addSubview:tick3];
+    [viewButtom addSubview:tick4];
+    
+    UILabel *lbl1 = [[UILabel alloc]initWithFrame:CGRectMake(61, 8, (CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 111), 32)];
+    lbl1.text = @"Payment for Go-Pay, insurance, transport and other bill payments";
+    lbl1.numberOfLines = 0;
+    lbl1.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+    lbl1.textAlignment = NSTextAlignmentLeft;
+    UILabel *lbl2 = [[UILabel alloc]initWithFrame:CGRectMake(61, 49, (CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 111), 32)];
+    lbl2.text = @"Pay by QR, experience cashless and enjoy discounts";
+    lbl2.numberOfLines = 0;
+    lbl2.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+    lbl2.textAlignment = NSTextAlignmentLeft;
+    UILabel *lbl3 = [[UILabel alloc]initWithFrame:CGRectMake(61, 95, (CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 111), 16)];
+    lbl3.text = @"Pay credit card bills form all banks*";
+    lbl3.numberOfLines = 0;
+    lbl3.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+    lbl3.textAlignment = NSTextAlignmentLeft;
+    UILabel *lbl4 = [[UILabel alloc]initWithFrame:CGRectMake(61, 125, (CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 111), 32)];
+    lbl4.text = @"Open time deposit start from IDR 500.000 (7% interest)";
+    lbl4.numberOfLines = 0;
+    lbl4.font = [UIFont fontWithName:@"Helvetica Neue" size:13];
+    lbl4.textAlignment = NSTextAlignmentLeft;
+    UILabel *lbl5 = [[UILabel alloc]initWithFrame:CGRectMake(61, 164, (CGRectGetWidth(self.viewSimobiPlusUpgrade.frame) - 111), 15)];
+    lbl5.text = @"*Terms and conditions apply";
+    lbl5.numberOfLines = 0;
+    lbl5.textColor = [UIColor grayColor];
+    lbl5.font = [UIFont fontWithName:@"Helvetica Neue" size:11];
+    lbl5.textAlignment = NSTextAlignmentLeft;
+    UILabel *lbl6 = [[UILabel alloc]initWithFrame:CGRectMake((CGRectGetWidth(viewButtom.frame) - 250)/2, CGRectGetHeight(viewButtom.frame) - 32, 250, 15)];
+    lbl6.text = @"*Your details from previous Simobi account is safe";
+    lbl6.numberOfLines = 1;
+    lbl6.font = [UIFont fontWithName:@"Helvetica Neue" size:11];
+    lbl6.textAlignment = NSTextAlignmentLeft;
+    
+    [viewButtom addSubview:lbl1];
+    [viewButtom addSubview:lbl2];
+    [viewButtom addSubview:lbl3];
+    [viewButtom addSubview:lbl4];
+    [viewButtom addSubview:lbl5];
+    [viewButtom addSubview:lbl6];
+    
+    UIButton *btnOk = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnOk addTarget:self action:@selector(actionSimobiPlusUpgrade) forControlEvents:UIControlEventTouchUpInside];
+    CGSize butonSize = CGSizeMake(250.0f, 35.0f);
+    [btnOk setFrame:CGRectMake((CGRectGetWidth(viewButtom.frame) - butonSize.width)/2, CGRectGetHeight(viewButtom.frame) - butonSize.height - 37, butonSize.width, butonSize.height)];
+    btnOk.layer.cornerRadius = 15;
+    btnOk.clipsToBounds = YES;
+    [btnOk setBackgroundColor:[self colorWithHexString:@"E30717"]];
+    btnOk.titleLabel.textColor = [UIColor whiteColor];
+    [btnOk setTitle:@"UPGRADE NOW" forState:UIControlStateNormal];
+    [btnOk.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
+    [viewButtom addSubview: btnOk];
+    
+    [self.viewSimobiPlusUpgrade addSubview:viewButtom];
+    NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
+    if ([simobiPlusUpgrade isEqual: @"1"]) {
+        [self.viewSimobiPlusUpgrade addSubview:imgClose];
+        [self.viewSimobiPlusUpgrade addSubview:btnCancel];
+    }
+
+    [self.viewWindow addSubview:_viewSimobiPlusUpgrade];
 }
 
 #pragma mark - ViewLifecycle
@@ -69,9 +196,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
- 
+    
     if (IS_IPHONE_5) {
-        
         CGRect bgviewFrame = self.bgView.frame;
         bgviewFrame.origin.y = 70;
         self.bgView.frame = bgviewFrame;
@@ -81,27 +207,19 @@
         self.logoutBtn.frame = contactviewFrame;
         
     }else if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0){
-        
         CGRect bgviewFrame = self.bgView.frame;
         bgviewFrame.origin.y = 40;
         self.bgView.frame = bgviewFrame;
-        
         CGRect contactviewFrame = self.logoutBtn.frame;
         contactviewFrame.origin.y -= 160;
         self.logoutBtn.frame = contactviewFrame;
-        
-        
     }else{
         CGRect bgviewFrame = self.bgView.frame;
         bgviewFrame.origin.y = 35;
         self.bgView.frame = bgviewFrame;
-        
         CGRect contactviewFrame = self.logoutBtn.frame;
         contactviewFrame.origin.y -= 87;
         self.logoutBtn.frame = contactviewFrame;
-        
-        
-        
     }
     
     CGRect contactviewFrame = self.logoutBtn.frame;
@@ -119,6 +237,87 @@
     self.payByQrBtn.clipsToBounds = YES;
     self.promoBtn.layer.cornerRadius = 10;
     self.promoBtn.clipsToBounds = YES;
+    
+    self.viewWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    // CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
+    NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
+    if (![simobiPlusUpgrade  isEqual: @"0"]) {
+        [self showSimobiPlusUpgrade];
+        [self showInfo];
+    }
+
+}
+
+- (void)actionCloseInfo {
+    [self.viewInfo removeFromSuperview];
+    if (IS_IPHONE_5) {
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 70;
+        self.bgView.frame = bgviewFrame;
+    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0){
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 40;
+        self.bgView.frame = bgviewFrame;
+    } else {
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 35;
+        self.bgView.frame = bgviewFrame;
+    }
+}
+
+- (void)actionShowSimobiupgrade {
+    [self showSimobiPlusUpgrade];
+}
+
+- (void)showInfo {
+    
+    if (IS_IPHONE_5) {
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 100;
+        self.bgView.frame = bgviewFrame;
+    } else if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0){
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 70;
+        self.bgView.frame = bgviewFrame;
+    } else{
+        CGRect bgviewFrame = self.bgView.frame;
+        bgviewFrame.origin.y = 95;
+        self.bgView.frame = bgviewFrame;
+    }
+    
+    self.viewInfo =[[UIView alloc]initWithFrame:CGRectMake(0, 64 ,CGRectGetWidth(self.view.frame),  60)];
+    self.viewInfo.backgroundColor = [self colorWithHexString:@"E30717"];
+    UIButton *btnCancel = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnCancel addTarget:self action:@selector(actionCloseInfo) forControlEvents:UIControlEventTouchUpInside];
+    CGSize btnCancelCancel = CGSizeMake(40.0f, 60.0f);
+    [btnCancel setFrame:CGRectMake((CGRectGetWidth(self.viewInfo.frame) - btnCancelCancel.width), 0, btnCancelCancel.width, btnCancelCancel.height)];
+    [btnCancel setBackgroundColor:[UIColor clearColor]];
+    
+    UIImageView *imgClose = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Close"]];
+    [imgClose setFrame:CGRectMake((CGRectGetWidth(self.viewInfo.frame) - 28), 22, 16, 16)];
+    
+    UIImageView *simobiLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"simobi_plus"]];
+    [simobiLogo setFrame:CGRectMake(20, 15, 90, 30)];
+    simobiLogo.image = [simobiLogo.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [simobiLogo setTintColor:[UIColor whiteColor]];
+    
+    UIButton *btnUpgrade = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnUpgrade addTarget:self action:@selector(actionShowSimobiupgrade) forControlEvents:UIControlEventTouchUpInside];
+    [btnUpgrade setFrame:CGRectMake(130, 15, 130, 30)];
+    btnUpgrade.layer.cornerRadius = 15;
+    btnUpgrade.clipsToBounds = YES;
+    [btnUpgrade setBackgroundColor:[UIColor whiteColor]];
+    btnUpgrade.titleLabel.textColor = [UIColor whiteColor];
+    [btnUpgrade setTitle:@"UPGRADE NOW" forState:UIControlStateNormal];
+    [btnUpgrade setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnUpgrade.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:11]];
+    
+    [self.viewInfo addSubview:btnUpgrade];
+    [self.viewInfo addSubview:simobiLogo];
+    [self.viewInfo addSubview:imgClose];
+    [self.viewInfo addSubview:btnCancel];
+    [self.view addSubview:self.viewInfo];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -135,9 +334,6 @@
     self.accountLBL.text  = [textDict objectForKey:ACCOUNT];
     self.payByQRLBL.text  = [textDict objectForKey:PAYBYQR];
     self.promoPayByQR.text = [NSString stringWithFormat:@"Promo\n%@", self.payByQRLBL.text];
-
-    //CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -257,20 +453,88 @@
 /*
  * Migration Button Action
  */
-- (IBAction)buttonActionMigration:(id)sender
-{
-    
-    BOOL isDownloaded = [SimobiUtility canOpenAppsWithUrlScheme:@"SimoboPlus://"];
+- (void)actionSimobiPlusUpgrade {
+    BOOL isDownloaded = [SimobiUtility canOpenAppsWithUrlScheme:@"smbplus://"];
     if (isDownloaded) {
-        // [ProgressHUD displayWithMessage:@"Loading"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"SimoboPlus://"]];
+        
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"smbplus://migrate/"]];
+//        return;
+        
+        Reachability *reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+        
+        if ([reachability currentReachabilityStatus] == NotReachable) {
+            // [SimobiAlert showAlertWithMessage:@"No Network connection\n Please try again later."];
+            
+            NSDictionary *textDict = [[SimobiManager shareInstance] textDataForLanguage];
+            [SimobiAlert showAlertWithMessage:[textDict objectForKey:REQUEST_TIME_OUT_ERROR]];
+            return;
+        }
+        
+        [self displayProgressHudWithMessage:@"Loading"];
+        NSString *mdn = [[SimobiManager shareInstance] sourceMDN];
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:0];
+        [params setObject:mdn forKey:@"sourceMDN"];
+        [params setObject:@"GenerateMigrateToken" forKey:@"txnName"];
+        [params setObject:@"Account" forKey:@"service"];
+        [params setObject:@"7" forKey:@"channelID"];
+        
+        NSString *normalisedUrl =  [SIMOBI_URL constructUrlStringWithParams:params];
+        
+        CONDITIONLOG(DEBUG_MODE,@"normalisedUrl:%@",normalisedUrl);
+
+        [SimobiServiceModel connectURL:normalisedUrl successBlock:^(NSDictionary *response) {
+            
+            [self hideProgressHud];
+            CONDITIONLOG(DEBUG_MODE,@"Response:%@",response);
+            
+            NSString *code = [[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"code"];
+            
+            
+            if ([code isEqualToString:@"2183"]) {
+                NSString *token = [[[response objectForKey:@"response"] objectForKey:@"migrateToken"] objectForKey:@"text"];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"smbplus://migrate/"]];
+            } else {
+                [SimobiAlert showAlertWithMessage:[[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"text"] ];
+            }
+            
+        }
+            failureBlock:^(NSError *error) {dispatch_async(dispatch_get_main_queue(), ^{
+                [ProgressHUD hide];
+                NSDictionary *textDict = [[SimobiManager shareInstance] textDataForLanguage];
+                [SimobiAlert showAlertWithMessage:[textDict objectForKey:REQUEST_TIME_OUT_ERROR]];
+              
+            });
+        }];
     } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"Please download SimobiPlus first!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        alert.tag = 121;
+        [alert show];
+       
+    }
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [super alertView:alertView clickedButtonAtIndex:buttonIndex];
+    if (121 == alertView.tag) {
         NSString *url = @"https://itunes.apple.com/id/app/simobiplus/id938705552";
         if ([SimobiUtility canOpenAppsWithUrlScheme:url]) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
         }
+    } else {
+        [DIMOPay closeSDK];
     }
+    
+}
 
+
+- (void)actionCancelSimobiPlusUpgrade
+{
+    
+    [self.viewSimobiPlusUpgrade removeFromSuperview];
+    
 }
 
 - (void)flashizInitSDK
@@ -808,12 +1072,41 @@ andLoyaltyProgramName:invoice.loyaltyProgramName
 }
 
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [super alertView:alertView clickedButtonAtIndex:buttonIndex];
-    [DIMOPay closeSDK];
+-(UIColor*)colorWithHexString:(NSString*)hex
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
 }
-
-
 
 
 @end

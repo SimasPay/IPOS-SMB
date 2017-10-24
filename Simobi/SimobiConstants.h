@@ -401,7 +401,6 @@ NSLog(xx, ##__VA_ARGS__); \
 //175.101.5.69:8443
 
 
-
 /*  ##########################      DEV   ##########################*/
 /*
         #define SIMOBI_URL @"https://175.101.5.70:8443/webapi/sdynamic?channelID=7&"
@@ -412,9 +411,6 @@ NSLog(xx, ##__VA_ARGS__); \
  
  #define FLASHiZ_SERVER  ServerURLDev
 
-/*  ##########################      DEV   ##########################*/
-
-
 /*  ##########################      QA   ##########################*/
 /*
 #define SIMOBI_URL @"https://175.101.5.70:8443/webapi/sdynamic?channelID=7&"
@@ -424,8 +420,6 @@ NSLog(xx, ##__VA_ARGS__); \
 #define SIMOBI_PURCHASE_DATA_URL @"https://175.101.5.70:8443/webapi/sdynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
  
  #define FLASHiZ_SERVER  ServerURLDev
-
-/*  ##########################      QA   ##########################*/
 
 
 /*  ##########################      UAT   ##########################*/
@@ -439,9 +433,6 @@ NSLog(xx, ##__VA_ARGS__); \
  
  #define FLASHiZ_SERVER  ServerURLDev
 
-/*  ##########################      UAT   ##########################*/
-
-
 
 /*  ##########################      STAGING   ##########################*/
 /*
@@ -452,20 +443,25 @@ NSLog(xx, ##__VA_ARGS__); \
  #define SIMOBI_PURCHASE_DATA_URL @"https://staging.dimo.co.id:8470/webapi/sdynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
  #define FLASHiZ_SERVER  ServerURLDev
 */
-/*  ##########################      STAGING   ##########################*/
-
-
-
 
 /*  ##########################      PROD   ##########################*/
-
-        #define SIMOBI_URL @"https://simobi.banksinarmas.com/webapi/sdynamic?channelID=7&"
-        #define SIMOBI_PUBLICKEY_ACCESS_URL @"https://simobi.banksinarmas.com/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
-        #define SIMOBI_BANKCODE_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
-        #define SIMOBI_PAYMENT_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
-        #define SIMOBI_PURCHASE_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+        #define SIMOBI_URL @"https:simobi.banksinarmas.com/webapi/sdynamic?channelID=7&"
+        #define SIMOBI_PUBLICKEY_ACCESS_URL @"https:simobi.banksinarmas.com/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
+        #define SIMOBI_BANKCODE_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+        #define SIMOBI_PAYMENT_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+        #define SIMOBI_PURCHASE_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
         #define FLASHiZ_SERVER  ServerURLLive
 
-/*  ##########################      PROD   ##########################*/
+
+/*  ##########################      local   ##########################*/
+/*
+#define SIMOBI_URL @"https:192.168.0.18:8443/webapi/sdynamic?channelID=7&"
+#define SIMOBI_PUBLICKEY_ACCESS_URL @"https:192.168.0.18:8443/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
+#define SIMOBI_BANKCODE_DATA_URL @"http:192.168.0.18:8443/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+#define SIMOBI_PAYMENT_DATA_URL @"http:192.168.0.18:8443/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+#define SIMOBI_PURCHASE_DATA_URL @"http:192.168.0.18:8443/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+#define FLASHiZ_SERVER  ServerURLLive
+*/
+
 
 #endif

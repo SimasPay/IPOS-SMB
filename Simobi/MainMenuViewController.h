@@ -12,7 +12,7 @@
 #define kUserDefaultPayInAPP                @"kUserDefaultPayInAPP"
 #define kUserDefaultPayInAPPBackURL         @"kUserDefaultPayInAPPBackURL"
 
-@interface MainMenuViewController : BaseViewController
+@interface MainMenuViewController : BaseViewController<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *purchaseLBL;
 @property (weak, nonatomic) IBOutlet UILabel *paymentLBL;
