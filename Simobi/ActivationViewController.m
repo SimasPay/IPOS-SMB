@@ -193,7 +193,7 @@
         self.changePinSubmitButton.hidden = YES;
     }
     
-    self.reactivationView.hidden = YES;
+    self.reactivationView.hidden = NO;
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
      
         CGRect _frame = CGRectMake(14.0, 150.0, 290.0, 140.0);

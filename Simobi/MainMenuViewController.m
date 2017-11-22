@@ -241,7 +241,7 @@
     self.promoBtn.clipsToBounds = YES;
     
     self.viewWindow = [[UIApplication sharedApplication] keyWindow];
-    [self showSimobiPlusUpgrade];
+    // [self showSimobiPlusUpgrade];
     // CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
     NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
     if (![simobiPlusUpgrade  isEqual: @"0"]) {
