@@ -13,7 +13,8 @@
 typedef enum
 {
     ParentControllerTypeRoot,
-    ParentControllerTypeAccount
+    ParentControllerTypeAccount,
+    ParentControllerTypeAccountChange
 
 }ParentControllerType;
 
@@ -23,6 +24,8 @@ typedef enum
 
 @property (weak, nonatomic) IBOutlet UIView *activationView;
 @property (weak, nonatomic) IBOutlet UIView *otpView;
+@property (weak, nonatomic) IBOutlet UILabel *lblOldpin;
+@property (weak, nonatomic) IBOutlet UITextField *inputOldpin;
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *otpField;

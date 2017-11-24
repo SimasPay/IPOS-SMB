@@ -46,6 +46,7 @@
 @property UIView *viewInfo;
 @property UIWindow *viewWindow;
 @property NSString *token;
+@property UIAlertView *alert;
 
 @end
 
@@ -248,6 +249,8 @@
         [self showSimobiPlusUpgrade];
         [self showInfo];
     }
+    
+    self.alert.delegate = self;
 
 }
 
@@ -456,6 +459,7 @@
  * Migration Button Action
  */
 - (void)actionSimobiPlusUpgrade {
+  
     BOOL isDownloaded = [SimobiUtility canOpenAppsWithUrlScheme:@"smbplus://"];
     if (isDownloaded) {
         
@@ -490,9 +494,11 @@
             
             if ([code isEqualToString:@"2183"]) {
                 self.token = [[[response objectForKey:@"response"] objectForKey:@"migrateToken"] objectForKey:@"text"];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You have SimobiPlus on your phone" delegate:self cancelButtonTitle:@"Register Now" otherButtonTitles:nil, nil];
-                alert.tag = 122;
-                [alert show];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You have SimobiPlus on your phone" delegate:self cancelButtonTitle:@"Register Now" otherButtonTitles:nil, nil];
+                    self.alert.tag = 122;
+                    [self.alert show];
+                });
             } else {
                 [SimobiAlert showAlertWithMessage:[[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"text"] ];
             }
@@ -506,9 +512,9 @@
             });
         }];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You dont have on your phoneSimobiPlus" delegate:self cancelButtonTitle:@"Install Now" otherButtonTitles:nil, nil];
-        alert.tag = 121;
-        [alert show];
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You dont have on your phoneSimobiPlus" delegate:self cancelButtonTitle:@"Install Now" otherButtonTitles:nil, nil];
+        self.alert.tag = 121;
+        [self.alert show];
        
     }
 }

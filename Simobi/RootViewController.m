@@ -456,6 +456,8 @@ static int currentIndexImage = 0;
 
 - (IBAction)loginButtonAction:(id)sender
 {
+//    ActivationViewController *activityViewController = [[ActivationViewController alloc] initWithparent:ParentControllerTypeAccountChange];
+//    [self.navigationController pushViewController:activityViewController animated:YES];
     SimobiLoginViewController *loginViewController = [[SimobiLoginViewController alloc] initWithNibName:@"SimobiLoginViewController" bundle:nil];
     [self.navigationController pushViewController:loginViewController animated:YES];
     
