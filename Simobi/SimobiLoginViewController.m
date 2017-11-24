@@ -228,7 +228,8 @@
                 [params setObject:@"subapp"     forKey:@"apptype"];
                 [params setObject:@"Login"      forKey:@"txnName"];
                 [params setObject:@"Account"    forKey:@"service"];
-                [params setObject:@"1.0"        forKey:@"appversion"];
+                [params setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]        forKey:@"appversion"];
+                [params setObject:@"ios"        forKey:@"appos"];
                 
                 NSString *normalisedUrl =  [SIMOBI_URL constructUrlStringWithParams:params];
             
