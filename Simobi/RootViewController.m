@@ -77,7 +77,7 @@ static int currentIndexImage = 0;
     
     self.viewWindow = [[UIApplication sharedApplication] keyWindow];
     
-    [self showSimobiPlusUpgrade];
+    // [self showSimobiPlusUpgrade];
 }
 - (void)showSliderImage {
     //current index slider

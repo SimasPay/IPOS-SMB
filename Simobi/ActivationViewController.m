@@ -536,7 +536,7 @@
             NSDictionary *textData = [[SimobiManager shareInstance] textDataForLanguage];
             
             [self title:@"Change mPIN"];
-            self.lblOldpin.text = @"mPIN Lama";
+            self.lblOldpin.text = @"Old mPIN";
             self.lab2.text = [textData objectForKey:NEWPIN];
             self.lab3.text = [textData objectForKey:CONFIRMPIN];
             self.resendOTPButton.hidden = YES;

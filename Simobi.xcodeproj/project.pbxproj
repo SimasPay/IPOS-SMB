@@ -951,7 +951,7 @@
 				ORGANIZATIONNAME = Mfino;
 				TargetAttributes = {
 					B062CB191802981200F820F0 = {
-						DevelopmentTeam = 9C475LSC5Y;
+						DevelopmentTeam = 6R85G648WC;
 						ProvisioningStyle = Automatic;
 					};
 					B062CB341802981200F820F0 = {
@@ -1262,7 +1262,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9C475LSC5Y;
+				DEVELOPMENT_TEAM = 6R85G648WC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1307,7 +1307,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Bandana Mushunuri (7QG4UF4A45)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9C475LSC5Y;
+				DEVELOPMENT_TEAM = 6R85G648WC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
