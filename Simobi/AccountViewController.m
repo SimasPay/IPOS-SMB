@@ -134,7 +134,7 @@
 
 - (IBAction)changemPinButtonAction:(id)sender {
     
-    ActivationViewController *activityViewController = [[ActivationViewController alloc] initWithparent:ParentControllerTypeAccount];
+    ActivationViewController *activityViewController = [[ActivationViewController alloc] initWithparent:ParentControllerTypeAccountChange];
     [self.navigationController pushViewController:activityViewController animated:YES];
 
 }

@@ -81,7 +81,7 @@
         
     } else {
         if (self.parentType == ParentControllerTypeAccountChange) {
-            self.lab1.text       = [textData objectForKey:CHANGEPIN_OLD_MPIN];
+            self.lblOldpin.text       = [textData objectForKey:CHANGEPIN_OLD_MPIN];
             self.lab2.text       = [textData objectForKey:CHANEPIN_NEW_MPIN];
             self.lab3.text       = [textData objectForKey:CHANEPIN_REENTER_NEW_MPIN];
             [self title:[textData objectForKey:CHANGEPIN]];
@@ -519,8 +519,8 @@
     
     if (self.resetPinRequested) {
         NSDictionary *textData = [[SimobiManager shareInstance] textDataForLanguage];
-        [self title:@"Reset mPIN"];
-        self.lab1.text = @"OTP";
+        [self title:[textData objectForKey:RESET_MPIN_TITLE]];
+        self.lab1.text = [textData objectForKey:OTP];
         self.lab2.text = [textData objectForKey:NEWPIN];
         self.lab3.text = [textData objectForKey:CONFIRMPIN];
         self.resendOTPButton.hidden = YES;
@@ -611,7 +611,7 @@
                             [self performServicecallWithUrlstring:url];
                         } else {
                             
-                            [SimobiAlert showAlertWithMessage:@"newpin does not match"];
+                            [SimobiAlert showAlertWithMessage:@"new Mpin does not match"];
                         }
                         
                     } else {
@@ -624,7 +624,7 @@
                 }
                 
             } else {
-                [SimobiAlert showAlertWithMessage:@"please enter mpin"];
+                [SimobiAlert showAlertWithMessage:@"please enter new mpin"];
             }
         } else {
             [SimobiAlert showAlertWithMessage:@"please enter old mpin"];
@@ -634,26 +634,26 @@
     } else {
         
         if ([self.mPinField isValid]) {
-            
             if ([self.mpin2Field isValid]) {
                 if ((self.mPinField.text.length < 6) || (self.mpin2Field.text.length < 6) ) {
                     [SimobiAlert showAlertWithMessage:isEnglish ? ENGLISH_SIX_DIGIT_ACTIVATION: BAHASA_SIX_DIGIT_ACTIVATION];
                     return;
                 }
                 
-                // Call Activation Service
-                if (!self.resetPinRequested && !self.confirmSelected) {
-                    if (!self.eula) {
-                        self.eula = [[Eula alloc] initWithFrame:SIMOBI_KEY_WINDOW.frame];
-                        self.eula.delegate = self;
-                        [self.view addSubview:self.eula];
-                    }
-                    
-                    return;
-                    
-                }
-                
                 if(COMPARE(self.mPinField.text, self.mpin2Field.text)) {
+                    // Call Activation Service
+                    if (!self.resetPinRequested && !self.confirmSelected) {
+                        if (!self.eula) {
+                            self.eula = [[Eula alloc] initWithFrame:SIMOBI_KEY_WINDOW.frame];
+                            self.eula.delegate = self;
+                            [self.view addSubview:self.eula];
+                        }
+                        
+                        return;
+                        
+                    }
+                
+                
                     
                     [self.otpField resignFirstResponder];
                     [self.mPinField resignFirstResponder];
@@ -699,7 +699,7 @@
                 }
 
             } else {
-                [SimobiAlert showAlertWithMessage:@"please  enter re-enter mpin"];
+                [SimobiAlert showAlertWithMessage:@"please re-enter mpin"];
             }
             
         } else {
@@ -875,9 +875,12 @@
 }
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField == self.mPinField || textField == self.mpin2Field || textField == self.otpField){
+    if (textField == self.mPinField || textField == self.mpin2Field || textField == self.inputOldpin){
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 6) ? NO : YES;
+    } else if (textField == self.otpField) {
+        NSUInteger newLength = [textField.text length] + [string length] - range.length;
+        return (newLength > 4) ? NO : YES;
     }
     
     return YES;

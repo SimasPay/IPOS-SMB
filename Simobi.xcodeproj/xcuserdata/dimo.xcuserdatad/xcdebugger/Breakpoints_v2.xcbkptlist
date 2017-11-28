@@ -154,7 +154,7 @@
                   moduleName = "Simobi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dimo/Documents/BSIM/Simobi/Simobi/ActivationViewController.m"
-                  timestampString = "533464210.481565"
+                  timestampString = "533529421.697598"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "622"
@@ -169,7 +169,7 @@
                   moduleName = "Simobi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dimo/Documents/BSIM/Simobi/Simobi/ActivationViewController.m"
-                  timestampString = "533464210.484421"
+                  timestampString = "533529421.699622"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "622"
@@ -177,22 +177,6 @@
                   offsetFromSymbolStart = "3235">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Simobi/ActivationViewController.m"
-            timestampString = "533218877.663371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626"
-            landmarkName = "-otpSubmitBUttonAction:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simobi/ActivationViewController.m"
-            timestampString = "533218877.663371"
+            timestampString = "533529421.564549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "637"
+            endingLineNumber = "637"
             landmarkName = "-otpSubmitBUttonAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,27 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Simobi/ActivationViewController.m"
-            timestampString = "533218877.663371"
+            timestampString = "533529421.564549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
-            landmarkName = "-otpSubmitBUttonAction:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Simobi/ActivationViewController.m"
-            timestampString = "533218877.663371"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "647"
-            endingLineNumber = "647"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "-otpSubmitBUttonAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,7 +346,7 @@
                   moduleName = "Simobi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dimo/Documents/BSIM/Simobi/Simobi/ActivationViewController.m"
-                  timestampString = "533464210.559492"
+                  timestampString = "533529421.74707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "697"
@@ -393,7 +361,7 @@
                   moduleName = "Simobi"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/dimo/Documents/BSIM/Simobi/Simobi/ActivationViewController.m"
-                  timestampString = "533464210.561954"
+                  timestampString = "533529421.749468"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "697"
@@ -512,6 +480,38 @@
             startingLineNumber = "752"
             endingLineNumber = "752"
             landmarkName = "-performServicecallWithUrlstring:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Simobi/ActivationViewController.m"
+            timestampString = "533528747.650009"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "627"
+            endingLineNumber = "627"
+            landmarkName = "-otpSubmitBUttonAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Simobi/ActivationViewController.m"
+            timestampString = "533529017.157889"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-success"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
