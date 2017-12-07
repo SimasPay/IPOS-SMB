@@ -245,10 +245,10 @@
     // [self showSimobiPlusUpgrade];
     // CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
     NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
-//    if (![simobiPlusUpgrade  isEqual: @"0"]) {
-//        [self showSimobiPlusUpgrade];
-//        [self showInfo];
-//    }
+    if (![simobiPlusUpgrade  isEqual: @"0"]) {
+        [self showSimobiPlusUpgrade];
+        [self showInfo];
+    }
     
     self.alert.delegate = self;
 
@@ -272,7 +272,10 @@
 }
 
 - (void)actionShowSimobiupgrade {
-    [self showSimobiPlusUpgrade];
+    
+    [self actionShowSimobiupgrade];
+    
+    // [self showSimobiPlusUpgrade];
 }
 
 - (void)showInfo {
@@ -320,8 +323,13 @@
     
     [self.viewInfo addSubview:btnUpgrade];
     [self.viewInfo addSubview:simobiLogo];
-    [self.viewInfo addSubview:imgClose];
-    [self.viewInfo addSubview:btnCancel];
+    
+    NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
+    if ([simobiPlusUpgrade isEqual: @"1"]) {
+        [self.viewInfo addSubview:imgClose];
+        [self.viewInfo addSubview:btnCancel];
+    }
+   
     [self.view addSubview:self.viewInfo];
 }
 
@@ -512,7 +520,7 @@
             });
         }];
     } else {
-        self.alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You dont have on your phoneSimobiPlus" delegate:self cancelButtonTitle:@"Install Now" otherButtonTitles:nil, nil];
+        self.alert = [[UIAlertView alloc] initWithTitle:@"Simobi" message:@"You dont have SimobiPlus on your phone" delegate:self cancelButtonTitle:@"Install Now" otherButtonTitles:nil, nil];
         self.alert.tag = 121;
         [self.alert show];
        
