@@ -83,6 +83,7 @@ NSLog(xx, ##__VA_ARGS__); \
 #define SIMOBI_BILLINQUIRY_CODE @"2021"
 #define SIMOBI_LOGIN_PHONE_NUMBER @"PhoneNumber"
 #define SIMOBI_FORCE_CHANGE_PIN_CODE @"2177"
+#define SIMOBI_FORCE_UPDATE @"2076"
 
 #define SimobiLoginNOsArray @"loginNumbersArray"
 
@@ -446,13 +447,12 @@ NSLog(xx, ##__VA_ARGS__); \
 */
 
 //  ##########################      PROD   ##########################
- /*       #define SIMOBI_URL @"https:simobi.banksinarmas.com/webapi/sdynamic?channelID=7&"
-        #define SIMOBI_PUBLICKEY_ACCESS_URL @"https:simobi.banksinarmas.com/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
-        #define SIMOBI_BANKCODE_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
-        #define SIMOBI_PAYMENT_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
-        #define SIMOBI_PURCHASE_DATA_URL @"http:simobi.banksinarmas.com/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+    #define SIMOBI_URL @"https://simobi.banksinarmas.com/webapi/sdynamic?channelID=7&"
+        #define SIMOBI_PUBLICKEY_ACCESS_URL @"https://simobi.banksinarmas.com/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
+        #define SIMOBI_BANKCODE_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+        #define SIMOBI_PAYMENT_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
+        #define SIMOBI_PURCHASE_DATA_URL @"http://simobi.banksinarmas.com/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
         #define FLASHiZ_SERVER  ServerURLLive
-  */
 
 
 // ##########################      local   ##########################
@@ -466,14 +466,14 @@ NSLog(xx, ##__VA_ARGS__); \
   */
 
 // ##########################  UAT BSIM   ##########################
-
+/*
 #define SIMOBI_URL @"https:10.32.3.65:8443/webapi/sdynamic?channelID=7&"
 #define SIMOBI_PUBLICKEY_ACCESS_URL @"https:10.32.3.65:8443/webapi/sdynamic?channelID=7&service=Account&sourceMDN=null&sourcePIN=null&txnName=GetPublicKey"
 #define SIMOBI_BANKCODE_DATA_URL @"https:10.32.3.65:8443/webapi/dynamic?category=category.bankCodes&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
 #define SIMOBI_PAYMENT_DATA_URL @"hhttps:10.32.3.65:8443/webapi/dynamic?category=category.payments&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
 #define SIMOBI_PURCHASE_DATA_URL @"https:10.32.3.65:8443/webapi/dynamic?category=category.purchase&channelID=7&service=Payment&txnName=GetThirdPartyData&version=-1"
 #define FLASHiZ_SERVER  ServerURLDev
-
+  */
 
 
 #endif

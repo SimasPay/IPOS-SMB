@@ -229,7 +229,7 @@
                 [params setObject:@"Login"      forKey:@"txnName"];
                 [params setObject:@"Account"    forKey:@"service"];
                 [params setObject:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]        forKey:@"appversion"];
-                [params setObject:@"ios"        forKey:@"appos"];
+                // [params setObject:@"ios"        forKey:@"appos"];
                 
                 NSString *normalisedUrl =  [SIMOBI_URL constructUrlStringWithParams:params];
             
@@ -299,6 +299,13 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[[[SimobiManager shareInstance] language] isEqualToString:SIMOBI_LANGUAGE_ENGLISH] ? @"Please change your mPIN before performing transaction." : @"Mohon ubah mPIN Anda sebelum melakukan transaksi." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                             alertView.tag = 101;
+                            [alertView show];
+                        });
+                        
+                    } else if ([code isEqualToString:SIMOBI_FORCE_UPDATE]) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Simobi" message: [[[response objectForKey:@"response"] objectForKey:@"message"] objectForKey:@"text"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                            alertView.tag = 102;
                             [alertView show];
                         });
                     } else {
@@ -380,6 +387,11 @@
         // force change mPin
         ActivationViewController *activityViewController = [[ActivationViewController alloc] initWithparent:ParentControllerTypeAccount];
         [self.navigationController pushViewController:activityViewController animated:YES];
+    } else if (alertView.tag == 102) {
+        NSString *url = @"https://itunes.apple.com/id/app/simobi/id807937634";
+        if ([SimobiUtility canOpenAppsWithUrlScheme:url]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        }
     }
 }
 
