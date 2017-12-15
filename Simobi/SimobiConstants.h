@@ -16,7 +16,7 @@
 
 /** A macro that uses conditional logic to log messages.
  */
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 
 #ifdef DEBUG
 #define CONDITIONLOG(condition, xx, ...) { if ((condition)) { \
