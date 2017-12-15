@@ -245,10 +245,10 @@
     // [self showSimobiPlusUpgrade];
     // CONDITIONLOG(DEBUG_MODE,@"MDN:%@",[[SimobiManager shareInstance] sourcePIN]);
     NSString *simobiPlusUpgrade = [[NSUserDefaults standardUserDefaults] objectForKey:@"simobiPlusUpgrade"];
-//    if (![simobiPlusUpgrade  isEqual: @"0"]) {
-//        [self showSimobiPlusUpgrade];
-//        [self showInfo];
-//    }
+    if (![simobiPlusUpgrade  isEqual: @"0"]) {
+        [self showSimobiPlusUpgrade];
+        [self showInfo];
+    }
     
     self.alert.delegate = self;
 
